@@ -213,7 +213,7 @@ if __name__ == '__main__':
             timestamp = ""
         download_media(username=folder,timestamp=timestamp)
         #pyperclip.copy(timestamp)
-        #del_csv_log_file(folder,str(timestamp))
+        del_csv_log_file(folder,str(timestamp))
 
         while True:
             if driver.page_source.__contains__('[Complete]') or driver.page_source.__contains__('[Stop]'):
