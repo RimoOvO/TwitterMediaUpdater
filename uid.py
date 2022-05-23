@@ -15,7 +15,7 @@ def writeFile(uid_list):
 def checkFolderExists(folder):
     if not os.path.exists(folder):
         os.mkdir(folder)
-    print("Created folder")
+        print("Created folder")
     return 0
 
 if __name__ == '__main__':
