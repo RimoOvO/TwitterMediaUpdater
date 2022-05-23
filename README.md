@@ -17,3 +17,4 @@
 
 # 致谢
 本项目使用了Chrome插件[Twitter Media Downloader](https://chrome.google.com/webstore/detail/twitter-media-downloader/cblpjenafgeohmnjknfhpdbdljfkndig)作为下载核心组件
+文件中的`TMD.crx`即为设计本项目时的Twitter Media Downloader浏览器插件
