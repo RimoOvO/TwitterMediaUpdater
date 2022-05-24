@@ -22,7 +22,8 @@ def input_username():
     while True:
         username = input("input uid: ")
         if len(username) != 0:
-            break
+            break    
+    return username
 
 if __name__ == '__main__':
     os.chdir(os.path.dirname(__file__))
