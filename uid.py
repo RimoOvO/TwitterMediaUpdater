@@ -18,12 +18,18 @@ def checkFolderExists(folder):
         print("Created folder")
     return 0
 
+def input_username(): 
+    while True:
+        username = input("input uid: ")
+        if len(username) != 0:
+            break
+
 if __name__ == '__main__':
     os.chdir(os.path.dirname(__file__))
     for i in range(1000):
         uid_list = readFile("uid.txt")
         print("uid counts: ",len(uid_list))
-        uid = input("input uid: ")
+        uid = input_username()
         if uid in uid_list:
             print("uid exists.")
         else:
