@@ -18,6 +18,11 @@ def checkFolderExists(folder):
         print("Created folder")
     return 0
 
+def create_file(filename):
+    if not os.path.exists(filename):
+        with open(filename,'w') as f:
+            f.write('')
+
 def input_username(): 
     while True:
         username = input("input uid: ")
@@ -27,6 +32,7 @@ def input_username():
 
 if __name__ == '__main__':
     os.chdir(os.path.dirname(__file__))
+    create_file('uid.txt')
     for i in range(1000):
         uid_list = readFile("uid.txt")
         print("uid counts: ",len(uid_list))
