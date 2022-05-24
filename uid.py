@@ -8,6 +8,8 @@ def readFile(file_name):
 
 def writeFile(uid_list):
     uid_str = ','.join(str(n) for n in uid_list)
+    if uid_str[0] == ',':
+        uid_str = uid_str[1:]
     with open('uid.txt', 'w+') as f:
         f.write(uid_str)
     return 0
