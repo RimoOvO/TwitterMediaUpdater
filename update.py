@@ -211,7 +211,10 @@ if __name__ == '__main__':
         print("Timestamp: ",timestamp)
         if timestamp == "0":
             timestamp = ""
-        download_media(username=folder,timestamp=timestamp)
+        try:
+            download_media(username=folder,timestamp=timestamp)
+        except:
+            print('An error occurred when updating user: ',folder)
         #pyperclip.copy(timestamp)
         del_csv_log_file(folder,str(timestamp))
 
