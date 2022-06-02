@@ -47,6 +47,7 @@ def download_media(username, timestamp = ""):
 
 @retry(stop_max_attempt_number=8)
 def login_twitter():
+    global username_require
 
     driver.get("https://twitter.com/i/flow/login")
     time.sleep(3)
