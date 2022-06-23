@@ -10,9 +10,23 @@ def writeFile(uid_list):
     uid_str = ','.join(str(n) for n in uid_list)
     if uid_str[0] == ',':
         uid_str = uid_str[1:]
+
     with open('uid.txt', 'w+') as f:
         f.write(uid_str)
     return 0
+
+def input_username(): 
+    while True:
+        username = input("input uid: ")
+        if len(username) != 0:
+            break
+
+    return username
+
+def create_file(filename):
+    if not os.path.exists(filename):
+        with open(filename,'w') as f:
+            f.write('')
 
 def checkFolderExists(folder):
     if not os.path.exists(folder):
@@ -20,25 +34,14 @@ def checkFolderExists(folder):
         print("Created folder")
     return 0
 
-def createFile(filename):
-    if not os.path.exists(filename):
-        with open(filename,'w') as f:
-            f.write('')
-
-def inputUsername(): 
-    while True:
-        username = input("input uid: ")
-        if len(username) != 0:
-            break    
-    return username
 
 if __name__ == '__main__':
     os.chdir(os.path.dirname(__file__))
-    createFile('uid.txt')
+    create_file('uid.txt')
     for i in range(1000):
         uid_list = readFile("uid.txt")
         print("uid counts: ",len(uid_list))
-        uid = inputUsername()
+        uid = input_username()
         if uid in uid_list:
             print("uid exists.")
         else:
@@ -48,7 +51,7 @@ if __name__ == '__main__':
 
         os.chdir('..')
         checkFolderExists(uid)
-        os.chdir(os.path.dirname(__file__))
+        os.chdir('#TwitterTool')
 
 
 
